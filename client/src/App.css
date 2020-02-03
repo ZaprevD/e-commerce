@@ -36,14 +36,17 @@ body{
   padding: 10px;
   position: relative;
   color: white;
+  cursor: pointer;
 }
 
 .main-nav li a{
+  padding: 5px;
   color: white;
   text-decoration: none;
 }
 
 .main-drop-down{
+  width: 100%;
   position: absolute;
   left: 0;
   top: 100%;
@@ -56,8 +59,14 @@ body{
   width: 100%;
   background-color: rgb(145, 135, 120);
 }
+
+.main-drop-down li:hover{
+  background-color: rgb(224, 175, 101);
+}
+
 .main-drop-down li a{
   text-decoration: none;
+  cursor: pointer;
   width: 100%;
   color:purple;
 }
@@ -110,8 +119,8 @@ form .form-content{
   background : wheat;
 }
 
-.active{
-  padding: 8px;
+.header-box .active{
+  padding: 8px 10px;
   background-color: rgb(77, 169, 255);
 }
 
@@ -235,4 +244,37 @@ form .form-content{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.cart-items-holder{
+  width : 50%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.cart-item{
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin-top: 30px;
+}
+.inf-holder{
+  padding: 5px;
+  text-align: center;
+}
+
+.pay-btn{
+  padding: 7px;
+  background-color: rgb(0, 145, 89);
+  border:none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  transition: transform .5s linear;
+}
+
+.pay-btn:hover{
+  background-color: rgb(228, 216, 216);
+  color: black;
+  transform: scale(1.1);
 }

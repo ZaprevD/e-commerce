@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 const AddProductForm = (props) => {
 
-    const [desc = "", setDesc] = useState();
-    const [price = "", setPrice] = useState();
-    const [category = "", setCategory] = useState();    
+    const [desc, setDesc] = useState("");
+    const [price, setPrice] = useState("");
+    const [category, setCategory] = useState("");    
 
     const onDescChange = (e) => setDesc(e.target.value);
     const onPriceChange = (e) => setPrice(e.target.value);
@@ -12,7 +12,8 @@ const AddProductForm = (props) => {
         let id = e.target.value.substring(0 , e.target.value.indexOf(" "));
         setCategory(id);
     };
-
+    let user = JSON.parse(localStorage.currentUser);
+    const token = "Bearer "+user.token;
     const addProduct = (e) => {
         e.preventDefault();
         const newProduct = {
@@ -20,7 +21,11 @@ const AddProductForm = (props) => {
             price: parseFloat(price),
             category: parseInt(category)
         };
-        return axios.post("/products/new", newProduct).then(res => {
+        return axios.post("/products/new", newProduct,{
+            'headers': {
+                'Authorization': token
+            }
+        }).then(res => {
             setDesc("");
             setPrice("");
             setCategory("");

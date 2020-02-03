@@ -10,7 +10,7 @@ const publicPaths = ["/login", "/register", "/products/all" , "/category/all", "
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(middlewares.logger);
-app.use(jwt({ secret: process.env.SECRET }).unless({ path: publicPaths }))
+// app.use(jwt({ secret: process.env.SECRET }).unless({ path: publicPaths }))
 app.use(allRoutes);
 app.use(middlewares.wrongRouteHandler);
 app.use(middlewares.errorHandler);

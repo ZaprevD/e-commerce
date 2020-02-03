@@ -19,4 +19,15 @@ class User {
     }
 }
 
-module.exports = { Product, User }
+class Cart {
+    constructor(id, productId, desc, price, is_sold, categoryName){
+        this.id = id;
+        this.productId = productId;
+        this.desc = desc;
+        this.price = price;
+        this.is_sold = is_sold;
+        this.categoryName = categoryName;
+    }
+}
+
+module.exports = { Product, User, Cart }

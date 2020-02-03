@@ -6,6 +6,7 @@ import Login from "./Components/LoginComponents/Login";
 import Register from "./Components/RegisterComponents/Register";
 import Products from "./Components/ProductsComponents/Products";
 import Profile from "./Components/ProfileComponents/Profile";
+import Cart from "./Components/CartComponents/Cart";
 class App extends Component {
 
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/products" component={Products} />
             <Route exact path="/profile" component={Profile} />
+            <Route exact path="/cart" component={Cart} />
           </div>
         </Router>
       </div>
