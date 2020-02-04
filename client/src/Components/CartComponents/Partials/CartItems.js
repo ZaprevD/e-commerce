@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+
 
 const CartItems = (props) => {
 
@@ -14,6 +15,7 @@ const CartItems = (props) => {
                 <h4>{props.categoryName}</h4>
             </div>
             <button className="pay-btn"> Pay Now </button>
+            <button onClick={props.remove} className="pay-btn"> Remove Item </button>
         </div>
     )
 

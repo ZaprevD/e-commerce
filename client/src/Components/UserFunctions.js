@@ -28,8 +28,11 @@ export const registerUser = (newUser) => {
 
 export const getCategories = () =>{
     return    axios.get('/category/all')
-    .then(res => {
-        return res.data 
-    });
+    .then(res => res.data );
+};
+
+export const getProducts = () => {
+  return  axios.get('/products/all')
+    .then(res => res.data);
 }
 

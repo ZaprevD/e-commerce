@@ -17,8 +17,8 @@ const Product = (props) => {
             {
                 newData.map(product => {
                     return (
-                        <ProductInfo key={product.Id} desc={product.description} price={product.price}
-                            category={product.categoryName} />
+                        <ProductInfo  key={product.Id} productId={product.Id}  desc={product.description} price={product.price}
+                        rerender={props.render}    category={product.categoryName} isSold={product.is_sold} />
                     )
 
                 })}
