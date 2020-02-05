@@ -2,6 +2,7 @@ import React from "react";
 import ProductInfo from "./ProductInfo";
 import ListCategory from "./ListCategory"
 const Product = (props) => {
+
     let newData = props.products.filter(el => {
         if (props.currentCategory.toLowerCase() !== "all") {
             return el.categoryName.toLowerCase().includes(props.currentCategory.toLowerCase());
@@ -9,19 +10,18 @@ const Product = (props) => {
             return props.products;
         }
     })
+
     return (
         <div className="products-holder">
             <div className="categoies-box">
                 <ListCategory select={props.selectCategory} categories={props.categories} />
             </div>
-            {
-                newData.map(product => {
-                    return (
-                        <ProductInfo  key={product.Id} productId={product.Id}  desc={product.description} price={product.price}
-                        rerender={props.render}    category={product.categoryName} isSold={product.is_sold} />
-                    )
-
-                })}
+            {newData.map(product => {
+                return (
+                    <ProductInfo key={product.Id} productId={product.Id} desc={product.description} price={product.price}
+                        addToCart={props.addToCart} category={product.categoryName} />
+                )
+            })}
         </div>
     )
 

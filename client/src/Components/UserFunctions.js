@@ -13,17 +13,13 @@ export const loginUser = (user) => {
                 email: decoded.currentUser.Email
             }
             localStorage.setItem("currentUser", JSON.stringify(currentUser));
-        })
-        .catch(err => console.log(err))
+        }).catch(err => console.log(err))
 }
 
 export const registerUser = (newUser) => {
     return axios.post("/register", newUser)
-        .then(res => {
-            console.log(res);
-        })
-        .catch(err => console.log(err)
-        );
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
 };
 
 export const getCategories = () =>{
@@ -35,4 +31,5 @@ export const getProducts = () => {
   return  axios.get('/products/all')
     .then(res => res.data);
 }
+
 

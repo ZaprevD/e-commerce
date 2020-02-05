@@ -30,7 +30,7 @@ setProductToSold = async(id) => {
         where: {
             Id: id
         }
-    }).then(() => console.log("5555")).catch(err => console.log(err));
+    }).then(() => console.log("Item sold")).catch(err => console.log(err));
 }
 
 addItemToCart = async(req, res) => {
