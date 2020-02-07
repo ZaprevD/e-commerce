@@ -19,8 +19,8 @@ class Products extends Component {
                     'authorization': `Bearer ${user.token}`
                 }
             }).then(res => this.componentDidMount()).catch(err => console.log(err))
-        }else{
-            window.location.href= '/login'
+        } else {
+            window.location.href = '/login'
         }
     }
 
