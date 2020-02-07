@@ -8,7 +8,7 @@ class Product {
         this.categoryName = categoryName
     }
 }
-
+// USER MODEL
 class User {
     constructor(Id, First_Name, Last_Name, Email, Is_admin) {
         this.Id = Id;
